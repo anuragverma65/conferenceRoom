@@ -1,0 +1,15 @@
+<%= form_for :holiday , url: holidays_path do |f| %>
+<p>
+<%= f.label :Date%><br>
+<%= f.date_select :date %>
+</p>
+  <p>
+    <%= f.label :reason%><br>
+    <%= f.text_field :reason %>
+  </p>
+    <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+<%= link_to 'Back', holidays_path %>

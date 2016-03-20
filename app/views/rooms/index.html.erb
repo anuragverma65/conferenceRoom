@@ -1,0 +1,21 @@
+<h1 style="text-align:center">Room Listing</h1>
+<br>
+ <%= link_to 'New Room', new_room_path %>
+<table class="table-striped" style="width:80%;text-align:center">
+  <tr style="text-align:center">
+    <th>Room Name</th>
+    <th>Size</th>
+    <th>Action</th>
+  </tr>
+ 
+  <% @rooms.each do |room| %>
+    <tr>
+      <td><%= room.name %></td>
+
+      <td><%= room.size %></td>
+
+      <td> <%= button_to "New Booking", new_room_booking_path(room.id), :method => "get" %></td>
+
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,17 @@
+<%= form_for :room, url: rooms_path do |f| %>
+  <p>
+    <%= f.label :name%><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
+<%= link_to 'Back', rooms_path %>
