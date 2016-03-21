@@ -3,6 +3,7 @@ class Booking < ActiveRecord::Base
   validate :holiday_date
   validate :overlaps
   validate :weekend
+ 
 
   def holiday_date
     holiday= Holiday.pluck(:date).reject(&:blank?)

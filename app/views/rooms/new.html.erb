@@ -1,4 +1,4 @@
-<div style="padding-left: 30%;padding-right: 40%">
+<div class="jumbotron" style="padding-left: 30%;padding-right: 40%">
 <%= form_for :room, url: rooms_path do |f| %>
 <p>
 <h3>Enter the details to create a new room</h3>
@@ -14,7 +14,7 @@
   </p>
  
   <p style="float: right">
-    <%= f.submit "Save Room", class: "btn-success", style: 'height:30px' %>
+    <%= f.submit "Save Room", class: "btn-success btn btn-block", style: 'height:30px' %>
     
   </p>
   <p>
