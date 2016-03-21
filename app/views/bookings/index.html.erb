@@ -1,7 +1,17 @@
-<h1 style="text-align:center">Booking Listing</h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<h3 style="text-align:center;color: white">Bookings Listing</h3>
+</nav>
 <br>
- <%= link_to 'New Booking', new_room_booking_path %>
-<table class="table-striped" style="width:80%;text-align:center">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="padding-left: 15%">
+  <%= button_to('New Booking',  new_room_booking_path , :method => "get" , :class => "btn btn-success btn-xs") %>
+  <br>
+<table border=1 class="table-striped table-hover" style="width:80%;text-align:center">
   <tr style="text-align:center">
     <th>Room Booked</th>
     <th>Booking User</th>
@@ -18,3 +28,4 @@
     </tr>
   <% end %>
 </table>
+</div>

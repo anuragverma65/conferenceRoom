@@ -1,6 +1,6 @@
 class HolidaysController < ApplicationController
   def index
-  		@holiday= Holiday.all
+  		@holidays= Holiday.all
   end
   def new
   end
