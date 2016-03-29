@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :bookings
   end
   resources :holidays
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

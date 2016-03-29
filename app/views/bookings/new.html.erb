@@ -10,7 +10,9 @@
 
 
 <% if defined?(@booking.errors) %>
-<%= @booking.errors.full_messages.first %>
+<% @booking.errors.each do |attr,msg| %>
+ <b style="background-color: grey"><%=msg %></b>
+ <% end %>
 <% end %>
 <h4>Room Name: <%= @room.name %></h4>
 <h4>Room No: <%= @room.id%></h4>

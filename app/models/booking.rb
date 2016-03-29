@@ -9,13 +9,13 @@ class Booking < ActiveRecord::Base
     holiday= Holiday.pluck(:date).reject(&:blank?)
     
     if holiday.include?(self.start.to_date)
-      errors.add(:start, "can't book, its a holiday")
+      errors.add(:start, "Booking denied as its a holiday.")
     end
   end
 
   def weekend
   	if self.start.wday==0 || self.start.wday==6 || self.end.wday==0 || self.end.wday==6
-  		errors.add(:start, "can't book, its weekend.")
+  		errors.add(:start, "Booking not allowed on weekends.")
   	end
   end		
 
@@ -23,7 +23,7 @@ class Booking < ActiveRecord::Base
     	Booking.where(room_id: self.room_id).each do |booking|
     		# raise (booking).inspect
     		if start < booking.end && start > booking.start
-    			errors.add(:start, "can't book, its an overlapping.")
+    			errors.add(:start, "booking denied as the slot is not available.")
     		end
     		
     	end
