@@ -1,0 +1,13 @@
+.jumbotron{:style => "padding-left: 40%"}
+  = form_for :holiday , url: holidays_path do |f|
+    %p
+      = f.label :name, 'Holiday Date'
+      %br
+        = f.date_select :date
+    %p
+      = f.label :reason
+      %br
+        = f.text_field :reason
+    %p
+      = f.submit "Create Holiday", class: "btn-success btn", style: 'height:35px'
+      = link_to('Back', holidays_path, :class=>"btn btn-primary")

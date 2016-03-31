@@ -1,0 +1,11 @@
+#main-container.container
+  .row
+    #content.col-xs-9
+      %p Room Created successfully
+      %p
+        %strong Room Name:
+        = @room.name
+      %p
+        %strong Size:
+        = @room.size
+      = link_to 'Back', rooms_path

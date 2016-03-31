@@ -1,0 +1,15 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  %h3{:style => "color: white;text-align: center;"} Conference Room
+%br
+  %br
+    %br
+      %br
+        .container
+          %h3
+            Hi there welcome to conference room app.
+          %h5 You can use this app to create a room or book any existing room for any time-slot.
+          %h5 You can create holidays so that rooms can't be booked on any pre defined holiday.
+          %br
+            %p
+              = link_to('Rooms Section', rooms_path, :class=>"btn btn-primary btn-block")
+              = link_to('Holiday Section', new_holiday_path, :class=>"btn btn-primary btn-block")

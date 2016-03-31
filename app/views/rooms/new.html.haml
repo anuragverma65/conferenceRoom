@@ -1,0 +1,16 @@
+.jumbotron{:style => "padding-left: 30%;padding-right: 40%"}
+  = form_for :room, url: rooms_path do |f|
+    %p
+      %h3 Enter the details to create a new room
+    %p
+      = f.label :name
+      %br
+        = f.text_field :name, style: 'width:80%'
+    %p
+      = f.label :size
+      %br
+        = f.text_field :size, style: 'width:80%'
+    %p{:style => "float: right"}
+      = f.submit "Save Room", class: "btn-success btn btn-block", style: 'height:30px'
+    %p
+      = link_to('Back', rooms_path, :class=>"btn btn-primary")

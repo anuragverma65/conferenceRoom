@@ -1,0 +1,32 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  %h3{:style => "color: white;text-align: center;"} New Booking
+%br
+  %br
+    %br
+      %br
+        .jumbotron
+          = form_for :booking , url: room_bookings_path do |f|
+            - if defined?(@booking.errors)
+              - @booking.errors.each do |attr,msg|
+                %b{:style => "background-color: grey"}= msg
+            %h4
+              Room Name: #{@room.name}
+            %h4
+              Room No: #{@room.id}
+            .jumbotron
+              = f.label :starts_at
+              %br
+                = f.datetime_select :start
+                .field
+                  = f.label :ends_at
+                  %br
+                    = f.datetime_select :end
+                .field
+                  = f.label :user
+                  %br
+                    = f.text_field :user
+                = f.hidden_field :room_id, :value=> @room.id
+                %br
+                  %p
+                    = f.submit "Create Booking", class: "btn-success btn ", style: 'height:30px'
+                  = link_to('Back', room_bookings_path, :class=>"btn btn-primary")

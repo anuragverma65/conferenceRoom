@@ -1,0 +1,21 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  %h3{:style => "text-align:center;color: white"} Holidays Listing
+%br
+  %br
+    %br
+      %br
+        %br
+          %br
+            %br
+              %div{:style => "padding-left: 15%"}
+                %br
+                  %table.table-striped.table-hover{:border => "1", :style => "width:80%;text-align:center"}
+                    %tr{:style => "text-align:center"}
+                      %th Holiday Date
+                      %th Reason
+                    - @holidays.each do |holiday|
+                      %tr
+                        %td
+                          = holiday.date
+                        %td
+                          = holiday.reason

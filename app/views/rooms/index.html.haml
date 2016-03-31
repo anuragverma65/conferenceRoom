@@ -1,0 +1,22 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  %h3{:style => "text-align:center;color: white"} Room Listing
+%br
+  %br
+    %br
+      %br
+        %br
+          %br
+            %div{:style => "padding-left: 15%"}
+              = button_to('New Room', new_room_path, :method => "get" , :class => "btn btn-success btn-sm")
+              %br
+                %table.table-striped.table-hover{:border => "1", :style => "width:80%;text-align:center"}
+                  %tr{:style => "text-align:center"}
+                    %th Room Name
+                    %th Size
+                    %th Action
+                  - @rooms.each do |room|
+                    %tr
+                      %td= room.name
+                      %td= room.size
+                      %td
+                        = button_to("New Booking", new_room_booking_path(room.id), :method => "get" , :class =>"btn btn-primary btn-xs")

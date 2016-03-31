@@ -1,0 +1,26 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  %h3{:style => "text-align:center;color: white"} Bookings Listing
+%br
+  %br
+    %br
+      %br
+        %br
+          %br
+            %br
+              %div{:style => "padding-left: 15%"}
+                = button_to('New Booking',  new_room_booking_path , :method => "get" , :class => "btn btn-success btn-xs")
+                %br
+                  %table.table-striped.table-hover{:border => "1", :style => "width:80%;text-align:center"}
+                    %tr{:style => "text-align:center"}
+                      %th Room Booked
+                      %th Booking User
+                      %th Booking Duration
+                    - @bookings.each do |booking|
+                      %tr
+                        %td
+                          = booking.room_id
+                        %td
+                          = booking.user
+                        %td
+                          = booking.start
+                          to #{booking.end}
